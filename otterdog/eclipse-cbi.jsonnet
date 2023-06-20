@@ -17,7 +17,7 @@ orgs.newOrg('eclipse-cbi') {
     ],
   },
   webhooks+: [
-    orgs.newWebhook() {
+    orgs.newOrgWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
       events+: [
         "create",
         "delete",
@@ -28,7 +28,6 @@ orgs.newOrg('eclipse-cbi') {
         "repository"
       ],
       secret: "pass:bots/technology.cbi/github.com/webhook-secret",
-      url: "https://ci.eclipse.org/cbi/github-webhook/",
     },
   ],
   _repositories+:: [
@@ -70,6 +69,17 @@ orgs.newOrg('eclipse-cbi') {
       description: "Various Dockerfiles for building stuff @ Eclipse",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "create",
+            "delete",
+            "push"
+          ],
+          secret: "********",
+        },
+      ],
     },
     orgs.newRepo('dockertools') {
       allow_update_branch: false,
@@ -109,6 +119,14 @@ orgs.newOrg('eclipse-cbi') {
         "hudson",
         "jenkins",
         "migration"
+      ],
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
+          events+: [
+            "pull_request",
+            "push"
+          ],
+        },
       ],
     },
     orgs.newRepo('jiro') {
@@ -173,10 +191,22 @@ orgs.newOrg('eclipse-cbi') {
       homepage: "",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
+      webhooks: [
+        orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
+          content_type: "json",
+          events+: [
+            "create",
+            "delete",
+            "pull_request",
+            "pull_request_review_comment",
+            "push"
+          ],
+          secret: "********",
+        },
+      ],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('main') {
           required_approving_review_count: null,
-          required_status_checks: [],
           requires_approving_reviews: false,
           requires_status_checks: false,
           requires_strict_status_checks: true,
@@ -221,6 +251,20 @@ orgs.newOrg('eclipse-cbi') {
       homepage: "",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
+      webhooks: [
+        orgs.newRepoWebhook('https://notify.travis-ci.org') {
+          events+: [
+            "create",
+            "delete",
+            "issue_comment",
+            "member",
+            "public",
+            "pull_request",
+            "push",
+            "repository"
+          ],
+        },
+      ],
     },
   ],
 }
