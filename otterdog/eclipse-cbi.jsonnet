@@ -265,6 +265,9 @@ orgs.newOrg('eclipse-cbi') {
           ],
         },
       ],
+      environments: [
+        orgs.newEnvironment('github-pages'),
+      ],
     },
   ],
 }
