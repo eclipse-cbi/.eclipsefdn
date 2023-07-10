@@ -156,16 +156,6 @@ orgs.newOrg('eclipse-cbi') {
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
     },
-    orgs.newRepo('jiro-ghsa-wqjm-x66q-r2c6') {
-      allow_forking: false,
-      allow_update_branch: false,
-      default_branch: "master",
-      dependabot_alerts_enabled: false,
-      has_issues: false,
-      has_projects: false,
-      has_wiki: false,
-      private: true,
-    },
     orgs.newRepo('jiro-masters') {
       allow_merge_commit: false,
       allow_squash_merge: false,
