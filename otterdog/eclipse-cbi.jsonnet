@@ -2,7 +2,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('eclipse-cbi') {
   settings+: {
-    billing_email: "webmaster@eclipse.org",
+    billing_email: "webmaster1@eclipse.org",
     blog: "https://projects.eclipse.org/projects/technology.cbi",
     default_repository_permission: "none",
     default_workflow_permissions: "write",
