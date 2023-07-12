@@ -178,6 +178,7 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: true,
       description: "REST Service to notarize macOS application bundles and DMG",
+      has_discussions: true,
       homepage: "",
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
