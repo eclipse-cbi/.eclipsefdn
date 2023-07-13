@@ -31,9 +31,6 @@ orgs.newOrg('eclipse-cbi') {
     },
   ],
   _repositories+:: [
-    orgs.extendRepo('.eclipsefdn') {
-      dependabot_security_updates_enabled: true,
-    },
     orgs.newRepo('.github') {
       allow_update_branch: false,
       default_branch: "master",
