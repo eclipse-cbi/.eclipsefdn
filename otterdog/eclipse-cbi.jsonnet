@@ -189,6 +189,7 @@ orgs.newOrg('eclipse-cbi') {
       ],
     },
     orgs.newRepo('org.eclipse.cbi') {
+      allow_merge_commit: false,      
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "CBI Maven plugins and Webservices",
