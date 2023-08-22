@@ -36,28 +36,20 @@ orgs.newOrg('eclipse-cbi') {
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Global configurations for the eclipse-cbi GitHub organization",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('ansible-playbooks') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Ansible playbooks for CBI",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('best-practices') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Collection of best practices for Common Build Infrastructure",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('buildkitd-okd') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('ci-admin') {
       allow_merge_commit: false,
@@ -65,16 +57,12 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('dockerfiles') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Various Dockerfiles for building stuff @ Eclipse",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           content_type: "json",
@@ -91,16 +79,12 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('eclipse-cbi-tycho-example') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse CBI Tycho example project",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "cbi",
         "eclipse",
@@ -112,15 +96,12 @@ orgs.newOrg('eclipse-cbi') {
     orgs.newRepo('epl-license-feature') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('hipp2jipp') {
       archived: true,
       default_branch: "master",
       description: "A tool that converts Hudson config files to make them compatible with Jenkins",
       homepage: "",
-      secret_scanning: "disabled",
       topics+: [
         "cbi",
         "config",
@@ -146,8 +127,6 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "Jenkins infrastructure for projects hosted by the Eclipse Foundation",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('jiro-agents') {
       allow_merge_commit: false,
@@ -158,15 +137,11 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins agents for projects hosted by the Eclipse Foundation",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('jiro-dashboard') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('jiro-masters') {
       allow_merge_commit: false,
@@ -177,14 +152,10 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins master (base) images for projects hosted by the Eclipse Foundation",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('jiro-static-agents') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('macos-notarization-service') {
       allow_merge_commit: false,
@@ -195,8 +166,6 @@ orgs.newOrg('eclipse-cbi') {
       description: "REST Service to notarize macOS application bundles and DMG",
       has_discussions: true,
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           content_type: "json",
@@ -223,34 +192,24 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "CBI Maven plugins and Webservices",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('org.eclipse.cbi-testdata') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('p2repo-aggregator') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('p2repo-analyzers') {
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('sonatype-nexus') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Docker images and Kubernetes deployment files for Sonatype Nexus repositories hosted by the Eclipse Foundation",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
     },
     orgs.newRepo('targetplatform-dsl') {
       allow_merge_commit: false,
@@ -261,8 +220,6 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Target Platform Definition DSL and Generator",
       homepage: "",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
