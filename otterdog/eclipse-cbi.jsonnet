@@ -1,5 +1,10 @@
 local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
+local newBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName) {
+  required_approving_review_count: null,
+  requires_pull_request: false,
+};
+
 orgs.newOrg('eclipse-cbi') {
   settings+: {
     billing_email: "webmaster@eclipse.org",
@@ -32,33 +37,54 @@ orgs.newOrg('eclipse-cbi') {
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
+      local thisRepo = self,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Global configurations for the eclipse-cbi GitHub organization",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('ansible-playbooks') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Ansible playbooks for CBI",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('best-practices') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Collection of best practices for Common Build Infrastructure",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('buildkitd-okd') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('ci-admin') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('dockerfiles') {
+      local thisRepo = self,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
@@ -74,13 +100,21 @@ orgs.newOrg('eclipse-cbi') {
           secret: "********",
         },
       ],
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('dockertools') {
+      local thisRepo = self,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('eclipse-cbi-tycho-example') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse CBI Tycho example project",
@@ -92,12 +126,20 @@ orgs.newOrg('eclipse-cbi') {
         "maven",
         "tycho"
       ],
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('epl-license-feature') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('hipp2jipp') {
+      local thisRepo = self,
       archived: true,
       default_branch: "master",
       description: "A tool that converts Hudson config files to make them compatible with Jenkins",
@@ -118,8 +160,12 @@ orgs.newOrg('eclipse-cbi') {
           ],
         },
       ],
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('jiro') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
@@ -127,8 +173,12 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "Jenkins infrastructure for projects hosted by the Eclipse Foundation",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('jiro-agents') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
@@ -137,13 +187,21 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins agents for projects hosted by the Eclipse Foundation",
       homepage: "",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('jiro-dashboard') {
+      local thisRepo = self,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('jiro-masters') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
@@ -152,12 +210,20 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins master (base) images for projects hosted by the Eclipse Foundation",
       homepage: "",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('jiro-static-agents') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('macos-notarization-service') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
@@ -180,39 +246,55 @@ orgs.newOrg('eclipse-cbi') {
         },
       ],
       branch_protection_rules: [
-        orgs.newBranchProtectionRule('main') {
-          required_approving_review_count: null,
-          requires_pull_request: false,
-          requires_status_checks: false,
-          requires_strict_status_checks: true,
-        },
+        newBranchProtectionRule(thisRepo.default_branch),
       ],
     },
     orgs.newRepo('org.eclipse.cbi') {
+      local thisRepo = self,
       allow_merge_commit: false,      
       delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "CBI Maven plugins and Webservices",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('org.eclipse.cbi-testdata') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('p2repo-aggregator') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('p2repo-analyzers') {
+      local thisRepo = self,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('sonatype-nexus') {
+      local thisRepo = self,
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Docker images and Kubernetes deployment files for Sonatype Nexus repositories hosted by the Eclipse Foundation",
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('targetplatform-dsl') {
+      local thisRepo = self,
       allow_merge_commit: false,
       allow_squash_merge: false,
       allow_update_branch: false,
@@ -234,6 +316,9 @@ orgs.newOrg('eclipse-cbi') {
             "repository"
           ],
         },
+      ],
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
       ],
       environments: [
         orgs.newEnvironment('github-pages'),
