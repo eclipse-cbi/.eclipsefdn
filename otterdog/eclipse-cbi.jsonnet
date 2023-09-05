@@ -3,7 +3,7 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 local newBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchName) {
   required_approving_review_count: null,
   requires_pull_request: false,
-  required_status_checks: false,
+  requires_status_checks: false,
 };
 
 orgs.newOrg('eclipse-cbi') {
