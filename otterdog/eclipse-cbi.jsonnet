@@ -11,7 +11,6 @@ orgs.newOrg('eclipse-cbi') {
     billing_email: "webmaster@eclipse.org",
     blog: "https://projects.eclipse.org/projects/technology.cbi",
     default_repository_permission: "none",
-    default_workflow_permissions: "write",
     description: "The Eclipse CBI project",
     email: "cbi-dev@eclipse.org",
     location: "Belgium",
@@ -21,6 +20,15 @@ orgs.newOrg('eclipse-cbi') {
     security_managers+: [
       "technology-cbi-project-leads"
     ],
+    workflows+: {
+      allow_action_patterns+: [
+        "ludeeus/action-shellcheck@*",
+        "marocchino/sticky-pull-request-comment@*",
+        "release-drafter/release-drafter@*"
+      ],
+      allowed_actions: "selected",
+      default_workflow_permissions: "write",
+    },
   },
   webhooks+: [
     orgs.newOrgWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
