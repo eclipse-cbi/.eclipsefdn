@@ -24,7 +24,9 @@ orgs.newOrg('eclipse-cbi') {
       allow_action_patterns+: [
         "ludeeus/action-shellcheck@*",
         "marocchino/sticky-pull-request-comment@*",
-        "release-drafter/release-drafter@*"
+        "release-drafter/release-drafter@*",
+        "slsa-framework/slsa-github-generator/*",
+        "softprops/action-gh-release@*"
       ],
       allowed_actions: "selected",
       default_workflow_permissions: "write",
