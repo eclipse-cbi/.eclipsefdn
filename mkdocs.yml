@@ -4,6 +4,9 @@ strict: false
 
 site_url: https://eclipse-cbi.github.io/.eclipsefdn/
 
+repo_name: eclipse-cbi/.eclipsefdn
+repo_url: https://github.com/eclipse-cbi/.eclipsefdn/
+
 docs_dir: ./docs
 site_dir: ./_site
 
