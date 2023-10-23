@@ -245,8 +245,6 @@ orgs.newOrg('eclipse-cbi') {
     },
     orgs.newRepo('macos-notarization-service') {
       local thisRepo = self,
-      allow_squash_merge: false,
-      allow_update_branch: false,
       dependabot_security_updates_enabled: true,
       description: "REST Service to notarize macOS application bundles and DMG",
       has_discussions: true,
