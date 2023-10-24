@@ -10,7 +10,6 @@ orgs.newOrg('eclipse-cbi') {
   settings+: {
     billing_email: "webmaster@eclipse.org",
     blog: "https://projects.eclipse.org/projects/technology.cbi",
-    default_repository_permission: "none",
     description: "The Eclipse CBI project",
     email: "cbi-dev@eclipse.org",
     location: "Belgium",
@@ -55,9 +54,34 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Global configurations for the eclipse-cbi GitHub organization",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
+    },
+    orgs.extendRepo('.eclipsefdn') {
+      local thisRepo = self,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
     },
     orgs.newRepo('ansible-playbooks') {
       local thisRepo = self,
@@ -66,6 +90,17 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Ansible playbooks for CBI",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -77,6 +112,17 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Collection of best practices for Common Build Infrastructure",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -87,6 +133,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -98,6 +155,17 @@ orgs.newOrg('eclipse-cbi') {
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -110,6 +178,17 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Various Dockerfiles for building stuff @ Eclipse",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           content_type: "json",
@@ -132,6 +211,17 @@ orgs.newOrg('eclipse-cbi') {
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -151,6 +241,17 @@ orgs.newOrg('eclipse-cbi') {
         "maven",
         "tycho"
       ],
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -161,6 +262,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -178,6 +290,17 @@ orgs.newOrg('eclipse-cbi') {
         "jenkins",
         "migration"
       ],
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           events+: [
@@ -194,6 +317,17 @@ orgs.newOrg('eclipse-cbi') {
       default_branch: "master",
       dependabot_security_updates_enabled: true,
       description: "Jenkins infrastructure for projects hosted by the Eclipse Foundation",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -206,6 +340,17 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins agents for projects hosted by the Eclipse Foundation",
       homepage: "",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -217,6 +362,17 @@ orgs.newOrg('eclipse-cbi') {
       default_branch: "master",
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -229,6 +385,17 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Jenkins master (base) images for projects hosted by the Eclipse Foundation",
       homepage: "",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -239,6 +406,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -249,6 +427,17 @@ orgs.newOrg('eclipse-cbi') {
       description: "REST Service to notarize macOS application bundles and DMG",
       has_discussions: true,
       homepage: "",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           content_type: "json",
@@ -270,6 +459,17 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       dependabot_security_updates_enabled: true,
       description: "CBI Maven plugins and Webservices",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -280,6 +480,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -290,6 +501,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -300,6 +522,17 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -312,6 +545,17 @@ orgs.newOrg('eclipse-cbi') {
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Docker images and Kubernetes deployment files for Sonatype Nexus repositories hosted by the Eclipse Foundation",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
@@ -324,6 +568,17 @@ orgs.newOrg('eclipse-cbi') {
       dependabot_security_updates_enabled: true,
       description: "Target Platform Definition DSL and Generator",
       homepage: "",
+      workflows+: {
+        allow_action_patterns+: [
+          "ludeeus/action-shellcheck@*",
+          "marocchino/sticky-pull-request-comment@*",
+          "release-drafter/release-drafter@*",
+          "slsa-framework/slsa-github-generator/*",
+          "softprops/action-gh-release@*"
+        ],
+        allowed_actions: "selected",
+        default_workflow_permissions: "write",
+      },
       webhooks: [
         orgs.newRepoWebhook('https://notify.travis-ci.org') {
           events+: [
