@@ -8,7 +8,6 @@ local newBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchN
 
 orgs.newOrg('eclipse-cbi') {
   settings+: {
-    billing_email: "webmaster@eclipse.org",
     blog: "https://projects.eclipse.org/projects/technology.cbi",
     description: "The Eclipse CBI project",
     email: "cbi-dev@eclipse.org",
