@@ -6,8 +6,6 @@ local newBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchN
   requires_status_checks: false,
 };
 
-blabla
-
 orgs.newOrg('eclipse-cbi') {
   settings+: {
     blog: "https://projects.eclipse.org/projects/technology.cbi",
@@ -51,7 +49,7 @@ orgs.newOrg('eclipse-cbi') {
   _repositories+:: [
     orgs.newRepo('.github') {
       local thisRepo = self,
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       default_branch: "master",
       delete_branch_on_merge: false,
