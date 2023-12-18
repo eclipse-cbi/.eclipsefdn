@@ -262,8 +262,14 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       default_branch: "master",
       dependabot_security_updates_enabled: true,
-      description: "Jenkins agents for projects hosted by the Eclipse Foundation",
+      description: "Jenkins agent images for projects hosted by the Eclipse Foundation",
       homepage: "",
+      topics: [
+        "docker",
+        "docker-image",
+        "eclipse",
+        "jenkins",
+      ],
       workflows+: {
         default_workflow_permissions: "write",
       },
