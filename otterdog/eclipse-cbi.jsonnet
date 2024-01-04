@@ -62,20 +62,6 @@ orgs.newOrg('eclipse-cbi') {
         newBranchProtectionRule(thisRepo.default_branch),
       ],
     },
-    orgs.extendRepo('.eclipsefdn') {
-      local thisRepo = self,
-      workflows+: {
-        allow_action_patterns+: [
-          "ludeeus/action-shellcheck@*",
-          "marocchino/sticky-pull-request-comment@*",
-          "release-drafter/release-drafter@*",
-          "slsa-framework/slsa-github-generator/*",
-          "softprops/action-gh-release@*"
-        ],
-        allowed_actions: "selected",
-        default_workflow_permissions: "write",
-      },
-    },
     orgs.newRepo('ansible-playbooks') {
       local thisRepo = self,
       allow_merge_commit: true,
