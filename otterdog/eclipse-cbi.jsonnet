@@ -52,7 +52,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Global configurations for the eclipse-cbi GitHub organization",
       workflows+: {
@@ -66,7 +65,6 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Ansible playbooks for CBI",
       workflows+: {
@@ -80,7 +78,6 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Collection of best practices for Common Build Infrastructure",
       workflows+: {
@@ -94,7 +91,6 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       workflows+: {
         default_workflow_permissions: "write",
@@ -106,7 +102,6 @@ orgs.newOrg('eclipse-cbi') {
     orgs.newRepo('cbi') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       secret_scanning: "disabled",
       secret_scanning_push_protection: "disabled",
@@ -119,7 +114,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_squash_merge: false,
       allow_update_branch: false,
       default_branch: "master",
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       workflows+: {
         default_workflow_permissions: "write",
@@ -133,7 +127,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Various Dockerfiles for building stuff @ Eclipse",
       workflows+: {
@@ -159,7 +152,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_merge_commit: true,
       allow_update_branch: false,
       default_branch: "master",
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       workflows+: {
         default_workflow_permissions: "write",
@@ -172,7 +164,6 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       description: "Eclipse CBI Tycho example project",
       homepage: "",
@@ -194,7 +185,6 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       workflows+: {
         default_workflow_permissions: "write",
