@@ -46,6 +46,15 @@ orgs.newOrg('eclipse-cbi') {
       secret: "pass:bots/technology.cbi/github.com/webhook-secret",
     },
   ],
+  secrets+: [
+    orgs.newOrgSecret('ECLIPSE_GITLAB_API_TOKEN') {
+      selected_repositories+: [
+        "org.eclipse.cbi"
+      ],
+      value: "pass:bots/technology.cbi/gitlab.eclipse.org/api-token",
+      visibility: "selected",
+    },
+  ],
   _repositories+:: [
     orgs.newRepo('.github') {
       local thisRepo = self,
