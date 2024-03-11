@@ -26,7 +26,9 @@ orgs.newOrg('eclipse-cbi') {
         "slsa-framework/slsa-github-generator/*",
         "softprops/action-gh-release@*",
         "jreleaser/release-action/.github/*@*",
-        "geekyeggo/delete-artifact@*"
+        "geekyeggo/delete-artifact@*",
+        "stCarolas/setup-maven@*",
+        "eclipse/dash-licenses/.github/actions/maven-license-check-action@*"
       ],
       allowed_actions: "selected",
       default_workflow_permissions: "write",
