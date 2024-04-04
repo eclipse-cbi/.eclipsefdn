@@ -14,7 +14,6 @@ orgs.newOrg('eclipse-cbi') {
     location: "Belgium",
     name: "Eclipse CBI",
     packages_containers_internal: false,
-    readers_can_create_discussions: true,
     security_managers+: [
       "technology-cbi-project-leads"
     ],
