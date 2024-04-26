@@ -19,15 +19,15 @@ orgs.newOrg('eclipse-cbi') {
     ],
     workflows+: {
       allow_action_patterns+: [
+        "eclipse/dash-licenses/.github/actions/maven-license-check-action@*",
+        "geekyeggo/delete-artifact@*",
+        "jreleaser/release-action/.github/*@*",
         "ludeeus/action-shellcheck@*",
         "marocchino/sticky-pull-request-comment@*",
         "release-drafter/release-drafter@*",
         "slsa-framework/slsa-github-generator/*",
         "softprops/action-gh-release@*",
-        "jreleaser/release-action/.github/*@*",
-        "geekyeggo/delete-artifact@*",
-        "stCarolas/setup-maven@*",
-        "eclipse/dash-licenses/.github/actions/maven-license-check-action@*"
+        "stCarolas/setup-maven@*"
       ],
       allowed_actions: "selected",
       default_workflow_permissions: "write",
@@ -118,6 +118,21 @@ orgs.newOrg('eclipse-cbi') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+    },
+    orgs.newRepo('cbi-website') {
+      local thisRepo = self,
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      secret_scanning: "disabled",
+      secret_scanning_push_protection: "disabled",
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
     },
     orgs.newRepo('ci-admin') {
       local thisRepo = self,
