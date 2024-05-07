@@ -113,8 +113,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_merge_commit: true,
       allow_update_branch: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       workflows+: {
         default_workflow_permissions: "write",
       },
@@ -125,8 +123,6 @@ orgs.newOrg('eclipse-cbi') {
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       workflows+: {
         default_workflow_permissions: "write",
       },
