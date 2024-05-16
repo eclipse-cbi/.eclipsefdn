@@ -27,7 +27,8 @@ orgs.newOrg('eclipse-cbi') {
         "release-drafter/release-drafter@*",
         "slsa-framework/slsa-github-generator/*",
         "softprops/action-gh-release@*",
-        "stCarolas/setup-maven@*"
+        "stCarolas/setup-maven@*",
+        "sonatype-nexus-community/iq-github-action@*",
       ],
       allowed_actions: "selected",
       default_workflow_permissions: "write",
@@ -325,6 +326,11 @@ orgs.newOrg('eclipse-cbi') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets+: [
+        orgs.newRepoSecret('IQ_TOKEN') {
+          value: "pass:bots/technology.cbi/sonatype-lifecycle/iq-token",
+        },
+      ],
       webhooks: [
         orgs.newRepoWebhook('https://ci.eclipse.org/cbi/github-webhook/') {
           content_type: "json",
