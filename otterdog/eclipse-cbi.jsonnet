@@ -348,6 +348,17 @@ orgs.newOrg('eclipse-cbi') {
         newBranchProtectionRule(thisRepo.default_branch),
       ],
     },
+    orgs.newRepo('nexus3-as-code') {
+      local thisRepo = self,
+      dependabot_security_updates_enabled: true,
+      description: "Manage Nexus3 configuration as code with Terraform",
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
+    },
     orgs.newRepo('org.eclipse.cbi') {
       local thisRepo = self,
       dependabot_security_updates_enabled: true,
