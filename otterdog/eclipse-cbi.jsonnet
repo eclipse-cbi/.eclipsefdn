@@ -363,6 +363,7 @@ orgs.newOrg('eclipse-cbi') {
       local thisRepo = self,
       dependabot_security_updates_enabled: true,
       description: "CBI Maven plugins and Webservices",
+      gh_pages_build_type: "workflow",
       homepage: "https://eclipse-cbi.github.io/org.eclipse.cbi/",
       workflows+: {
         default_workflow_permissions: "write",
