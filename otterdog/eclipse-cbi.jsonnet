@@ -19,7 +19,7 @@ orgs.newOrg('eclipse-cbi') {
     ],
     workflows+: {
       allow_action_patterns+: [
-        "eclipse/dash-licenses/.github/actions/maven-license-check-action@*",
+        "eclipse-dash/dash-licenses/.github/actions/maven-license-check-action@*",
         "geekyeggo/delete-artifact@*",
         "jreleaser/release-action/.github/*@*",
         "ludeeus/action-shellcheck@*",
