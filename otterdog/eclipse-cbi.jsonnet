@@ -56,6 +56,9 @@ orgs.newOrg('eclipse-cbi') {
       value: "pass:bots/technology.cbi/gitlab.eclipse.org/api-token",
       visibility: "selected",
     },
+    orgs.newOrgSecret('DEVELOCITY_ACCESS_KEY') {
+      value: "pass:bots/technology.cbi/develocity.eclipse.org/gh-api-token",
+    },
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
