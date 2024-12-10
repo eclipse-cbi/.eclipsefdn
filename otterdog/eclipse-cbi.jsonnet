@@ -124,6 +124,10 @@ orgs.newOrg('eclipse-cbi') {
     },
     orgs.newRepo('cbi-website') {
       local thisRepo = self,
+      description: "Eclipse CBI Website Project based on mkdocs",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
       allow_merge_commit: true,
       allow_update_branch: false,
       delete_branch_on_merge: false,
@@ -133,6 +137,9 @@ orgs.newOrg('eclipse-cbi') {
       },
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
+      ],
+      environments: [
+        orgs.newEnvironment('github-pages'),
       ],
     },
     orgs.newRepo('ci-admin') {
