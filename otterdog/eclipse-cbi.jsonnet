@@ -14,9 +14,6 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     location: "Belgium",
     name: "Eclipse CBI",
     packages_containers_internal: false,
-    security_managers+: [
-      "technology-cbi-project-leads"
-    ],
     workflows+: {
       allow_action_patterns+: [
         "eclipse-dash/dash-licenses/.github/actions/maven-license-check-action@*",
