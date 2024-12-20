@@ -6,7 +6,7 @@ local newBranchProtectionRule(branchName) = orgs.newBranchProtectionRule(branchN
   requires_status_checks: false,
 };
 
-orgs.newOrg('eclipse-cbi') {
+orgs.newOrg('technology.cbi', 'eclipse-cbi') {
   settings+: {
     blog: "https://projects.eclipse.org/projects/technology.cbi",
     description: "The Eclipse CBI project",
