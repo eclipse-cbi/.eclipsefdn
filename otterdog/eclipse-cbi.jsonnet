@@ -59,7 +59,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     orgs.newOrgSecret('DEVELOCITY_ACCESS_KEY') {
       value: "pass:bots/technology.cbi/develocity.eclipse.org/gh-api-token",
     },
-    orgs.newOrgSecret('GITHUB_PREVIEW_TOKEN') {
+    orgs.newOrgSecret('GH_PREVIEW_TOKEN') {
       value: "pass:bots/technology.cbi/github.com/preview-token",
     },
   ],
