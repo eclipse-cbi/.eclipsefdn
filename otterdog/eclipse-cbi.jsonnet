@@ -51,14 +51,16 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     orgs.newOrgSecret('ECLIPSE_GITLAB_API_TOKEN') {
       selected_repositories+: [
         "org.eclipse.cbi",
-        "eclipse-cbi-tycho-example",
-        "cbi-website"
+        "eclipse-cbi-tycho-example"
       ],
       value: "pass:bots/technology.cbi/gitlab.eclipse.org/api-token",
       visibility: "selected",
     },
     orgs.newOrgSecret('DEVELOCITY_ACCESS_KEY') {
       value: "pass:bots/technology.cbi/develocity.eclipse.org/gh-api-token",
+    },
+    orgs.newOrgSecret('GITHUB_API_TOKEN_CBI_WEBSITE') {
+      value: "pass:bots/technology.cbi/github.com/api-token-cbi-website",
     },
   ],
   _repositories+:: [
