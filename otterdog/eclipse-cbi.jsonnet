@@ -139,6 +139,15 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         orgs.newEnvironment('github-pages'),
       ],
     },
+    orgs.newRepo('cbi-website-preview') {
+      description: "PR Preview Project for Eclipse CBI Website",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages-preview",
+      gh_pages_source_path: "/",
+      environments: [
+        orgs.newEnvironment('github-pages'),
+      ],
+    },
     orgs.newRepo('ci-admin') {
       local thisRepo = self,
       allow_squash_merge: false,
