@@ -140,6 +140,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
       ],
       environments: [
         orgs.newEnvironment('github-pages'),
+        orgs.newEnvironment('pull-request-preview'),
       ],
     },
     orgs.newRepo('cbi-website-preview') {
