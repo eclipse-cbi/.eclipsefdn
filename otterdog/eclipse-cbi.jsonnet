@@ -23,6 +23,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         "marocchino/sticky-pull-request-comment@*",
         "release-drafter/release-drafter@*",
         "rossjrw/pr-preview-action@*",
+        "JamesIves/github-pages-deploy-action@*",
         "slsa-framework/slsa-github-generator/*",
         "softprops/action-gh-release@*",
         "stCarolas/setup-maven@*",
