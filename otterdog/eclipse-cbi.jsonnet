@@ -49,7 +49,8 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     orgs.newOrgSecret('ECLIPSE_GITLAB_API_TOKEN') {
       selected_repositories+: [
         "org.eclipse.cbi",
-        "eclipse-cbi-tycho-example"
+        "eclipse-cbi-tycho-example",
+        "cbi-website"
       ],
       value: "pass:bots/technology.cbi/gitlab.eclipse.org/api-token",
       visibility: "selected",
