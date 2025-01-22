@@ -481,5 +481,18 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         orgs.newEnvironment('github-pages'),
       ],
     },
+    orgs.newRepo('misc-checks') {
+      local thisRepo = self,
+      allow_merge_commit: true,
+      allow_update_branch: false,
+      dependabot_security_updates_enabled: true,
+      description: "Miscellaneous workflow checks for CBI",
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
+    },
   ],
 }
