@@ -144,6 +144,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         orgs.newEnvironment('github-pages'),
         orgs.newEnvironment('pull-request-preview'),
       ],
+      has_discussions: true,
     },
     orgs.newRepo('cbi-website-preview') {
       description: "PR Preview Project for Eclipse CBI Website",
