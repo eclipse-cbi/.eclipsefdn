@@ -132,7 +132,6 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
       gh_pages_source_path: "/",
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
       workflows+: {
         default_workflow_permissions: "write",
