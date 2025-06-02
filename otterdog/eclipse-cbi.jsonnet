@@ -410,7 +410,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     },
     orgs.newRepo('p2repo-aggregator') {
       local thisRepo = self,
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
@@ -423,7 +423,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     },
     orgs.newRepo('p2repo-analyzers') {
       local thisRepo = self,
-      allow_merge_commit: true,
+      allow_merge_commit: false,
       allow_update_branch: false,
       delete_branch_on_merge: false,
       dependabot_security_updates_enabled: true,
@@ -433,6 +433,20 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
+    },
+    orgs.newRepo('p2repo-sbom') {
+      local thisRepo = self,
+      allow_merge_commit: false,
+      allow_update_branch: false,
+      delete_branch_on_merge: false,
+      dependabot_security_updates_enabled: true,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
+      has_discussions: true,
     },
     orgs.newRepo('sonatype-nexus') {
       local thisRepo = self,
