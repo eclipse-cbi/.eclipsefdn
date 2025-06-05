@@ -61,6 +61,24 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     },
     orgs.newOrgSecret('GH_PREVIEW_TOKEN') {
       value: "pass:bots/technology.cbi/github.com/preview-token",
+    },    
+    orgs.newOrgSecret('GPG_KEY_ID') {
+      value: "pass:bots/technology.cbi/gpg/key_id",
+    },
+    orgs.newOrgSecret('GPG_PASSPHRASE') {
+      value: "pass:bots/technology.cbi/gpg/passphrase",
+    },
+    orgs.newOrgSecret('GPG_PRIVATE_KEY') {
+      value: "pass:bots/technology.cbi/gpg/secret-subkeys.asc",
+    },
+    orgs.newOrgSecret('GPG_SUBKEY_ID') {
+      value: "pass:bots/technology.cbi/gpg/subkey_id",
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_PASSWORD') {
+      value: "pass:bots/technology.cbi/central.sonatype.org/token-password",
+    },
+    orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
+      value: "pass:bots/technology.cbi/central.sonatype.org/token-username",
     },
   ],
   _repositories+:: [
