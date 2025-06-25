@@ -142,6 +142,15 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('cbi-actions') {
+      description: "Eclipse CBI Github Actions library for Eclipse Foundation services",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",
+      environments: [
+        orgs.newEnvironment('github-pages'),
+      ],
+    },
     orgs.newRepo('cbi-website') {
       local thisRepo = self,
       description: "Eclipse CBI Website Project based on mkdocs",
