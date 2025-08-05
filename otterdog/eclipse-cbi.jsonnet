@@ -181,6 +181,13 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         orgs.newEnvironment('github-pages'),
       ],
     },
+    orgs.newRepo('central-staging-plugins') {
+      description: "Plugins for managing staging artifacts from the Sonatype Central Portal",
+      dependabot_security_updates_enabled: true,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },  
     orgs.newRepo('ci-admin') {
       local thisRepo = self,
       allow_squash_merge: false,
