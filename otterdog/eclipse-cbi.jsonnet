@@ -187,7 +187,14 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-    },  
+    },
+    orgs.newRepo('central-staging-plugins-assembly-template') {
+      description: "Assembly template for the Central Staging Plugins to be used to generate a bundle for the Sonatype Central Portal",
+      dependabot_security_updates_enabled: true,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('ci-admin') {
       local thisRepo = self,
       allow_squash_merge: false,
