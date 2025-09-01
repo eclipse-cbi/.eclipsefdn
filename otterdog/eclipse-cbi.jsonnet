@@ -28,6 +28,7 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         "softprops/action-gh-release@*",
         "stCarolas/setup-maven@*",
         "sonatype-nexus-community/iq-github-action@*",
+        "appleboy/scp-action@*",
       ],
       allowed_actions: "selected",
       default_workflow_permissions: "write",
