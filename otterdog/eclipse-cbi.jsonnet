@@ -264,6 +264,17 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
       workflows+: {
         default_workflow_permissions: "write",
       },
+      secrets+: [
+        orgs.newRepoSecret('SCP_KEY') {
+          value: "pass:bots/technology.cbi/projects-storage.eclipse.org/id_ed25519",
+        },
+        orgs.newRepoSecret('SCP_PASSPHRASE') {
+          value: "pass:bots/technology.cbi/projects-storage.eclipse.org/id_ed25519.passphrase",
+        },
+        orgs.newRepoSecret('SCP_USERNAME') {
+          value: "pass:bots/technology.cbi/projects-storage.eclipse.org/username",
+        },
+      ],
       branch_protection_rules: [
         newBranchProtectionRule(thisRepo.default_branch),
       ],
