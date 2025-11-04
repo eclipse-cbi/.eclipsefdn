@@ -561,5 +561,20 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         newBranchProtectionRule(thisRepo.default_branch),
       ],
     },
+    orgs.newRepo('helm-charts') {
+      description: "This repository contains the helm-charts source from Eclipse Foundation Common Build Infrastructure projects.",
+      gh_pages_build_type: "legacy",
+      gh_pages_source_branch: "gh-pages",
+      gh_pages_source_path: "/",      
+      homepage: "https://eclipse-cbi.github.io/helm-charts/",
+      environments: [
+        orgs.newEnvironment('github-pages') {
+          branch_policies+: [
+            "gh-pages"
+          ],
+          deployment_branch_policy: "selected",
+        },
+      ],
+    }
   ],
 }
