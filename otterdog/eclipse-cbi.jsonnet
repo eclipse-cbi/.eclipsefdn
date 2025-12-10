@@ -202,6 +202,13 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
         default_workflow_permissions: "write",
       },
     },
+    orgs.newRepo('central-staging-plugings-multi-module-workflow') {
+      description: "Project testing the workflow for building and releasing multi-module projects using the Central Staging Plugins to repo.eclipse.org as a public repository for artifacts.",
+      dependabot_security_updates_enabled: true,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+    },
     orgs.newRepo('ci-admin') {
       local thisRepo = self,
       allow_squash_merge: false,
