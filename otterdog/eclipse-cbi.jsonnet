@@ -81,11 +81,11 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     orgs.newOrgSecret('CENTRAL_SONATYPE_TOKEN_USERNAME') {
       value: "pass:bots/technology.cbi/central.sonatype.org/token-username",
     },
-    orgs.newOrgSecret('REPO3_TOKEN_PASSWORD') {
-      value: "pass:bots/technology.cbi/repo3.eclipse.org/token-password",
+    orgs.newOrgSecret('REPO_TOKEN_PASSWORD') {
+      value: "pass:bots/technology.cbi/repo.eclipse.org/token-password",
     },
-    orgs.newOrgSecret('REPO3_TOKEN_USERNAME') {
-      value: "pass:bots/technology.cbi/repo3.eclipse.org/token-username",
+    orgs.newOrgSecret('REPO_TOKEN_USERNAME') {
+      value: "pass:bots/technology.cbi/repo.eclipse.org/token-username",
     },
   ],
   _repositories+:: [
