@@ -588,6 +588,17 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
           deployment_branch_policy: "selected",
         },
       ],
-    }
+    },
+    orgs.newRepo('vaultctl') {
+      local thisRepo = self,
+      description: "vaultctl is a lightweight shell script tool designed to simplify interactions with Secrets Manager, whether used in scripts or directly from the shell.",
+      dependabot_security_updates_enabled: true,
+      workflows+: {
+        default_workflow_permissions: "write",
+      },
+      branch_protection_rules: [
+        newBranchProtectionRule(thisRepo.default_branch),
+      ],
+    },
   ],
 }
