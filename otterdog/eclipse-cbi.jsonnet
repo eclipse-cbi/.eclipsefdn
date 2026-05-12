@@ -84,6 +84,9 @@ orgs.newOrg('technology.cbi', 'eclipse-cbi') {
     orgs.newOrgSecret('REPO_TOKEN_USERNAME') {
       value: "pass:bots/technology.cbi/repo.eclipse.org/token-username",
     },
+    orgs.newOrgSecret('RENOVATE_TOKEN') {
+      value: "pass:bots/technology.cbi/github.com/renovate-token",
+    },    
   ],
   _repositories+:: [
     orgs.newRepo('.github') {
